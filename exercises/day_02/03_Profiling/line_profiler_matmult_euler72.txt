@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 23 13:48:38 2026
+
+@author: wiewe372
+"""
+
+Matmult.py 
+# ----------------------------------------------
+
+Wrote profile results to 'Matmult_line_profiler.py.lprof'
+Timer unit: 1e-06 s
+
+Total time: 6.32026 s
+File: Matmult_line_profiler.py
+Function: matmult_original at line 10
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    10                                           @profile
+    11                                           def matmult_original(X, Y):
+    12         1        241.8    241.8      0.0      result = [[0] * len(Y[0]) for _ in range(len(X))]
+    13
+    14       251         72.5      0.3      0.0      for i in range(len(X)):
+    15     63000      10431.6      0.2      0.2          for j in range(len(Y[0])):
+    16  15750250    2629224.7      0.2     41.6              for k in range(len(Y)):
+    17  15687500    3680255.6      0.2     58.2                  result[i][j] += X[i][k] * Y[k][j]
+    18
+    19         1         29.0     29.0      0.0      return result
+
+
+Euler72.py
+# ------------------------------------------------------
+
+30397485.0
+Wrote profile results to 'euler72.py.lprof'
+Timer unit: 1e-06 s
+
+Total time: 0.0027983 s
+File: euler72.py
+Function: gen_primes at line 5
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     5                                           @profile
+     6                                           def gen_primes(n):
+     7         1          1.3      1.3      0.0      l = range(2,n)
+     8         1          0.3      0.3      0.0      primes = []
+     9       999        176.2      0.2      6.3      for j in range(0,len(l)):
+    10       998        162.3      0.2      5.8          p = True
+    11      2968        519.1      0.2     18.6          for d in primes:
+    12      2967        814.4      0.3     29.1              if(d > sqrt(l[j])):
+    13       167         26.4      0.2      0.9                  break
+    14      2800        634.6      0.2     22.7              if(l[j] % d == 0):
+    15       830        129.8      0.2      4.6                  p = False
+    16       830        133.8      0.2      4.8                  break;
+    17       998        158.8      0.2      5.7          if(p):
+    18       168         39.0      0.2      1.4              primes.append(l[j])
+    19
+    20         1          2.3      2.3      0.1      return primes
+
+Total time: 0.0863878 s
+File: euler72.py
+Function: factorize at line 22
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    22                                           @profile
+    23                                           def factorize(n,primes):
+    24      9999       1985.4      0.2      2.3      factors = []
+    25      9999       1700.3      0.2      2.0      init_n = n
+    26     96347      17387.4      0.2     20.1      for p in primes:
+    27    118736      26678.7      0.2     30.9          while(n%p == 0):
+    28     22389       4582.0      0.2      5.3              n = n/p
+    29     22389       4355.6      0.2      5.0              factors.append(p)
+    30     96347      21974.4      0.2     25.4          if(p > sqrt(n)):
+    31      9999       1752.8      0.2      2.0              break
+    32      9999       1972.0      0.2      2.3      if(n > 1):
+    33      9596       1964.7      0.2      2.3          factors.append(n)
+    34      9999       2034.5      0.2      2.4      return factors
+
+Total time: 0.150116 s
+File: euler72.py
+Function: fast_phi at line 51
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    51                                           @profile
+    52                                           def fast_phi(n,primes):
+    53      9999     128411.0     12.8     85.5      factors = factorize(n,primes)
+    54      9999       1987.2      0.2      1.3      phi = factors[0]-1
+    55     31985       7619.6      0.2      5.1      for i in range(1,len(factors)):
+    56     21986       4604.5      0.2      3.1          if(factors[i] == factors[i-1]):
+    57      7685       2140.9      0.3      1.4              phi *= (factors[i]-1)*(factors[i])/(factors[i]-1)
+    58                                                   else:
+    59     14301       3605.6      0.3      2.4              phi *= (factors[i]-1)
+    60      9999       1747.2      0.2      1.2      return phi
+
+
+
+
