@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 24 14:26:42 2026
+
+@author: wiewe372
+"""
+
+
+exp shape: (256, 2)
+model shape: (48, 2)
+First 5 exp rows:
+ [[0.                nan]
+ [0.07302266        nan]
+ [0.14604532        nan]
+ [0.21906798        nan]
+ [0.29209064        nan]]
+First 5 model rows:
+ [[0.00000000e+00 0.00000000e+00]
+ [1.25664000e+00 4.82924765e+04]
+ [2.51327000e+00 5.31966931e+04]
+ [3.76991000e+00 3.87520848e+04]
+ [5.02655000e+00 7.68097411e+04]]
+Arrays exactly equal: False
+Valid exp points: 244
+Valid model points: 48
+Points used for fitting: 244
+Best linear scaling factor: 1.1551e-04
+Max abs residual (linear fit): 11.631892169959917
+Mean abs residual (linear fit): 1.8157282158212629
+Best log-space scaling factor: 1.2389e-04
+Max abs residual (log fit): 11.396965096836809
+Mean abs residual (log fit): 1.75427684380831
+
+
+
+
+
+The model was fitted to the experimental scattering data
+using both a linear least-squares scaling and a log-space scaling. 
+The optimal scaling factors were 1.155 × 10^-4 for the linear fit
+and 1.239 × 10^-4 for the log-space fit. 
+The log-space fit gave a slightly lower mean absolute residual 
+and improved agreement across a broader q range, 
+indicating that it better captures relative differences 
+over the full dynamic range. 
+However, systematic deviations remain, showing that a simple
+multiplicative scaling is insufficient for a full description
+of the experimental data.
+
+
+
+
+
+
+
+
+
