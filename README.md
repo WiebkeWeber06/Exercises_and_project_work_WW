@@ -11,12 +11,14 @@ This repository contains my solutions to course exercises as well as my project 
 ├── exercises/
 │   ├── day_01/
 │   ├── day_02/
-│   └── day_03/
+│   ├── day_03/
+│   ├── day_04/
+│   └── day_05/
 │
 ├── project/
-│   └── (project files)
+│   ├── 01_old_code/
+│   └── wiebke_qpcr_project/
 │
-├── requirements.txt
 └── README.md
 ```
 
@@ -24,38 +26,51 @@ This repository contains my solutions to course exercises as well as my project 
 
 ## Exercises
 
-The `exercises/` folder contains solutions to daily assignments.  
+The `exercises/` folder contains solutions to daily assignments.
 Each day has its own subfolder (e.g., `day_01`, `day_02`, etc.), allowing for a clear and chronological organization of tasks and progress.
 
 ---
 
 ## Project
 
-The `project/` folder contains the main project developed during the course.  
-It may include multiple scripts, modules, and supporting files depending on the evolving scope of the project.
+The `project/` folder contains the main project developed during the course.
 
-The project focuses on building a **professional and flexible RT-qPCR analysis program**. The aim is to create a tool that can handle a wide range of RT-qPCR experiments while providing clear, reproducible, and publication-ready output.
+### qPCR Analysis Pipeline
 
-This project builds on code I originally developed during my master’s work for RT-qPCR analysis. That earlier version was functional but more limited in scope, structure, and robustness. The goal of this project is to redesign and extend that work into a more scalable and reusable analysis pipeline.
+The primary project is located in:
 
-### Planned Features
+```
+project/wiebke_qpcr_project/
+```
 
-- Statistical analysis of RT-qPCR results  
-- Export of statistical outputs as CSV files  
-- Generation of clear and informative graphs  
-- Support for a wide variety of experimental designs  
-- Improved structure, readability, and maintainability  
-- A more professional and scalable analysis workflow  
-- Handling of multi-plate experimental data  
+This project implements a **modular and reproducible RT-qPCR analysis pipeline**, including:
+
+* preprocessing and quality control
+* technical replicate summarization
+* normalization using reference genes
+* optional inter-plate calibration
+* statistical testing
+* automated plotting and reporting
+
+The goal is to move from one-off analysis scripts toward a **flexible, scalable, and reusable analysis workflow** suitable for real research applications.
+
+This project builds on code originally developed during my master’s work and extends it into a more structured and robust pipeline.
+
+See the project-specific README for full details:
+
+```
+project/wiebke_qpcr_project/README.md
+```
 
 ---
 
 ## Purpose
 
-- Practice and deepen understanding of Python programming  
-- Maintain a structured overview of completed exercises  
-- Apply concepts in a larger, real-world scientific project  
-- Document learning progress over time  
+* Practice and deepen understanding of Python programming
+* Maintain a structured overview of completed exercises
+* Apply concepts in a larger, real-world scientific project
+* Develop a reusable and professional data analysis pipeline
+* Document learning progress over time
 
 ---
 
@@ -63,51 +78,58 @@ This project builds on code I originally developed during my master’s work for
 
 To use this repository locally:
 
-1. Clone the repository  
-   ```bash
-   git clone <your-repository-url>
-   ```
+1. Clone the repository
 
-2. Navigate into the directory  
-   ```bash
-   cd Exercises_and_project_work_WW
-   ```
+```bash
+git clone <your-repository-url>
+```
 
-3. Explore the contents  
-   - `exercises/` → daily tasks  
-   - `project/` → main project work  
+2. Navigate into the directory
+
+```bash
+cd Exercises_and_project_work_WW
+```
+
+3. Explore the contents
+
+* `exercises/` → daily tasks
+* `project/` → main project work
 
 ---
 
 ## Requirements
 
-- Python 3.x  
+This repository does not enforce a single global environment.
 
-Some exercises or the project may require additional packages such as:
+Each project or exercise may define its own requirements.
 
-- `numpy`  
-- `pandas`  
-- `matplotlib`  
+For the qPCR pipeline, see:
 
-These will be listed in `requirements.txt`.
+```
+project/wiebke_qpcr_project/environment.yml
+```
 
-Install dependencies with:
+or
 
-```bash
-pip install -r requirements.txt
+```
+project/wiebke_qpcr_project/requirements.txt
 ```
 
 ---
 
 ## Notes
 
-- The code in this repository reflects a learning process and may include exploratory or non-optimized solutions.  
-- Different approaches may be used across exercises as new concepts are introduced.  
+* This repository reflects a learning process and includes exploratory as well as structured code
+* Different approaches are used as new concepts are introduced throughout the course
+* The project component focuses on applying programming skills to a real scientific problem
 
 ---
 
 ## Author
 
-Wiebke Weber
+**Wiebke Weber**
+PhD Candidate, Uppsala University
+
+
 
 
